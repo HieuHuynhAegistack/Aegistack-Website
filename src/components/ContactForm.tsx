@@ -57,8 +57,8 @@ export const ContactForm: React.FC = () => {
   if (isSubmitted) {
     return (
       <div className="card p-8 text-center">
-        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <CheckCircle className="w-8 h-8 text-green-600" />
+        <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#FEF3CD' }}>
+          <CheckCircle className="w-8 h-8" style={{ color: '#FEBC32' }} />
         </div>
         <h3 className="font-heading text-xl font-semibold text-gray-900 mb-2">
           Message Sent!
@@ -126,7 +126,7 @@ export const ContactForm: React.FC = () => {
             name="company"
             value={formData.company}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:border-transparent"
             placeholder="Your company"
           />
         </div>
@@ -140,7 +140,7 @@ export const ContactForm: React.FC = () => {
             value={formData.message}
             onChange={handleChange}
             rows={5}
-            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none ${
+            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:border-transparent resize-none ${
               errors.message ? 'border-red-300' : 'border-gray-300'
             }`}
             placeholder="Tell us how we can help..."

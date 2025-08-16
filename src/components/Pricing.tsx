@@ -45,19 +45,19 @@ export const Pricing: React.FC = () => {
   const [selectedPlan, setSelectedPlan] = useState<PricingPlan | null>(null);
 
   return (
-    <section id="pricing" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-heading text-4xl font-bold text-gray-900 mb-4">
+    <section id="pricing" className="py-24 text-white bg-blue-600">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-4xl font-bold text-white font-heading">
             Simple, transparent pricing
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="max-w-3xl mx-auto text-xl text-blue-100">
             Choose the plan that fits your team size and project complexity. 
             All plans include our core features with a 14-day free trial.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid max-w-4xl gap-8 mx-auto md:grid-cols-2">
           {plans.map((plan) => (
             <PricingCard
               key={plan.id}
@@ -67,14 +67,7 @@ export const Pricing: React.FC = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">
-            Need a custom solution for your enterprise?
-          </p>
-          <button className="btn-secondary">
-            Contact Our Sales Team
-          </button>
-        </div>
+        
       </div>
 
       {selectedPlan && (

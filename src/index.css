@@ -5,8 +5,10 @@
 :root {
   --color-primary: #2563eb;
   --color-primary-dark: #1d4ed8;
-  --color-accent: #06b6d4;
-  --color-accent-dark: #0891b2;
+  --color-accent: #FEBC32;
+  --color-accent-dark: #E6A429;
+  --color-yellow: #FEBC32;
+  --color-yellow-dark: #E6A429;
   --color-neutral-50: #f8fafc;
   --color-neutral-100: #f1f5f9;
   --color-neutral-200: #e2e8f0;
@@ -30,11 +32,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  @apply bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  @apply font-medium px-6 py-3 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  background-color: #FEBC32;
+  color: #1e293b;
+}
+
+.btn-primary:hover {
+  background-color: #E6A429;
 }
 
 .btn-secondary {
   @apply bg-white hover:bg-gray-50 text-gray-900 font-medium px-6 py-3 rounded-2xl border border-gray-200 transition-all duration-200 shadow-sm hover:shadow-md;
+}
+
+.btn-yellow {
+  @apply font-medium px-6 py-3 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  background-color: #FEBC32;
+  color: #1e293b;
+}
+
+.btn-yellow:hover {
+  background-color: #E6A429;
 }
 
 .card {

@@ -70,13 +70,13 @@ export const Features: React.FC = () => {
   const [selectedFeature, setSelectedFeature] = useState<Feature | null>(null);
 
   return (
-    <section id="features" className="py-24 bg-white">
+    <section id="features" className="py-24 bg-blue-600 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-heading text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="font-heading text-4xl font-bold text-white mb-4">
             Everything you need to ship quality software
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
             From project planning to test execution, AegisStack provides a complete toolkit 
             for modern development teams who prioritize quality and efficiency.
           </p>

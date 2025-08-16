@@ -9,10 +9,10 @@ interface PricingCardProps {
 
 export const PricingCard: React.FC<PricingCardProps> = ({ plan, onSelect }) => {
   return (
-    <div className={`card p-8 relative ${plan.popular ? 'ring-2 ring-blue-500 scale-105' : ''}`}>
+    <div className={`card p-8 relative ${plan.popular ? 'ring-2 scale-105' : ''}`} style={plan.popular ? { borderColor: '#FEBC32' } : {}}>
       {plan.popular && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-          <div className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center space-x-1">
+          <div className="text-white px-4 py-2 rounded-full text-sm font-medium flex items-center space-x-1" style={{ backgroundColor: '#FEBC32', color: '#1e293b' }}>
             <Star className="w-4 h-4" />
             <span>Most Popular</span>
           </div>
