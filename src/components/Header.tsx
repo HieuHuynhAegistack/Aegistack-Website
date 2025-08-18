@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useLocation, Link } from 'react-router-dom';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -21,14 +24,24 @@ export const Header: React.FC = () => {
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <button onClick={scrollToTop} className="focus:outline-none">
-              <img 
-                src="/aegistack-light.webp" 
-                alt="AegisStack" 
-                className="w-auto h-8 hover:opacity-80 transition-opacity"
-              />
-            </button>
+                    <div className="flex items-center space-x-3">
+            {isHomePage ? (
+              <button onClick={scrollToTop} className="focus:outline-none">
+                <img 
+                  src="/aegistack-light.webp" 
+                  alt="AegisStack" 
+                  className="w-auto h-8 hover:opacity-80 transition-opacity"
+                />
+              </button>
+            ) : (
+              <Link to="/" className="focus:outline-none">
+                <img 
+                  src="/aegistack-light.webp" 
+                  alt="AegisStack Home" 
+                  className="w-auto h-8 hover:opacity-80 transition-opacity"
+                />
+              </Link>
+            )}
           </div>
 
           {/* Navigation and CTA */}

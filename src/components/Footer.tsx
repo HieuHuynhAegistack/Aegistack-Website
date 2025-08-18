@@ -1,19 +1,38 @@
 import React from 'react';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { Link } from './Link';
 
 export const Footer: React.FC = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex items-center mb-4">
-              <img 
-                src="/aegistack-light.webp" 
-                alt="AegisStack" 
-                className="h-8 w-auto"
-              />
+                        <div className="flex items-center mb-4">
+              {isHomePage ? (
+                <button onClick={scrollToTop} className="focus:outline-none">
+                  <img 
+                    src="/aegistack-light.webp" 
+                    alt="AegisStack" 
+                    className="h-8 w-auto"
+                  />
+                </button>
+              ) : (
+                <RouterLink to="/" className="focus:outline-none">
+                  <img 
+                    src="/aegistack-light.webp" 
+                    alt="AegisStack Home" 
+                    className="h-8 w-auto"
+                  />
+                </RouterLink>
+              )}
             </div>
             <p className="text-gray-400 mb-6">
               Streamline your project management with AI-powered QA automation.
