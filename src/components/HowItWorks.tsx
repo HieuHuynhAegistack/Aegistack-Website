@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Bot, Settings, Zap } from 'lucide-react';
 import { AIKeyModal } from './AIKeyModal';

@@ -1,13 +1,28 @@
+"use client";
+
 import React from 'react';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
-import { Link } from './Link';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 
 export const Footer: React.FC = () => {
-  const location = useLocation();
-  const isHomePage = location.pathname === '/';
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHomePage = pathname === '/';
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const handleNavClick = (sectionId: string) => {
+    if (isHomePage) {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      router.push(`/#${sectionId}`);
+    }
+  };
+
+  const handleLogoClick = () => {
+    if (isHomePage) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      router.push('/');
+    }
   };
   return (
     <footer className="bg-gray-900 text-white">
@@ -16,23 +31,13 @@ export const Footer: React.FC = () => {
           {/* Brand */}
           <div className="md:col-span-1">
                         <div className="flex items-center mb-4">
-              {isHomePage ? (
-                <button onClick={scrollToTop} className="focus:outline-none">
-                  <img 
-                    src="/aegistack-light.webp" 
-                    alt="AegisStack" 
-                    className="h-8 w-auto"
-                  />
-                </button>
-              ) : (
-                <RouterLink to="/" className="focus:outline-none">
-                  <img 
-                    src="/aegistack-light.webp" 
-                    alt="AegisStack Home" 
-                    className="h-8 w-auto"
-                  />
-                </RouterLink>
-              )}
+              <button onClick={handleLogoClick} className="focus:outline-none">
+              <img 
+                src="/aegistack-light.webp" 
+                alt="AegisStack"
+                className="h-8 w-auto"
+              />
+            </button>
             </div>
             <p className="text-gray-400 mb-6">
               Streamline your project management with AI-powered QA automation.
@@ -44,24 +49,16 @@ export const Footer: React.FC = () => {
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#features" className="text-gray-400 hover:text-white transition-colors">
-                  Features
-                </Link>
+                <button onClick={() => handleNavClick('features')} className="text-gray-400 hover:text-white transition-colors">Features</button>
               </li>
               <li>
-                <Link href="/pricing" className="text-gray-400 hover:text-white transition-colors">
-                  Pricing
-                </Link>
+                <button onClick={() => handleNavClick('pricing')} className="text-gray-400 hover:text-white transition-colors">Pricing</button>
               </li>
               <li>
-                <Link href="#how-it-works" className="text-gray-400 hover:text-white transition-colors">
-                  How it Works
-                </Link>
+                <button onClick={() => handleNavClick('how-it-works')} className="text-gray-400 hover:text-white transition-colors">How it Works</button>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Integrations
-                </a>
+                <button onClick={() => handleNavClick('features')} className="text-gray-400 hover:text-white transition-colors">Integrations</button>
               </li>
             </ul>
           </div>
@@ -71,17 +68,17 @@ export const Footer: React.FC = () => {
             <h3 className="font-semibold text-lg mb-4">Support</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/help" external className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/help" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                   Help Center
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" external className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/privacy" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" external className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/terms" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                   Terms of Service
                 </Link>
               </li>

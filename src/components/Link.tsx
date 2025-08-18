@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import NextLink from 'next/link';
 
 interface LinkProps {
   href: string;
@@ -33,10 +33,10 @@ export const Link: React.FC<LinkProps> = ({ href, children, className = '', exte
     );
   }
 
-  // Handle internal navigation with React Router
+  // Handle internal navigation with Next.js Link
   return (
-    <RouterLink to={href} className={className}>
+    <NextLink href={href} className={className}>
       {children}
-    </RouterLink>
+    </NextLink>
   );
 };

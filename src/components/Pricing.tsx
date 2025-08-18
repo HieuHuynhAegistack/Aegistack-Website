@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { PricingCard } from './PricingCard';
 import { PricingModal } from './PricingModal';
@@ -28,6 +30,18 @@ const plansData: Record<string, Omit<PricingPlan, 'price' | 'period' | 'cta'> & 
       'Access to Background Agents',
       'Access to Bugbot',
       'Access to maximum context windows',
+    ],
+    cta: { monthly: 'Contact Sales', yearly: 'Contact Sales' },
+    popular: true,
+  },
+  ultra: {
+    id: 'ultra',
+    name: 'Ultra',
+    price: { monthly: '$200', yearly: '$160' },
+    description: 'Everything in Pro, plus',
+    features: [
+      '20x usage on all OpenAI, Claude, Gemini models',
+      'Priority access to new features',
     ],
     cta: { monthly: 'Contact Sales', yearly: 'Contact Sales' },
     popular: true,
@@ -76,7 +90,7 @@ export const Pricing: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid max-w-4xl gap-8 mx-auto md:grid-cols-2 items-stretch">
+        <div className="grid max-w-6xl gap-8 mx-auto md:grid-cols-3 items-stretch">
           {Object.values(plansData).map((plan) => (
             <PricingCard
               key={plan.id}

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { FeatureCard } from './FeatureCard';
 import { FeatureModal } from './FeatureModal';

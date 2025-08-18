@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { X, Building, User } from 'lucide-react'; // Assuming User icon for Basic plan
 import type { PricingPlan } from '../types';
 
@@ -11,6 +11,20 @@ export const PricingModal: React.FC<PricingModalProps> = ({ plan, onClose }) => 
   const [email, setEmail] = useState('');
   const [company, setCompany] = useState('');
   const [teamSize, setTeamSize] = useState('');
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        onClose();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [onClose]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,7 +35,7 @@ export const PricingModal: React.FC<PricingModalProps> = ({ plan, onClose }) => 
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full transform transition-all duration-300 ease-in-out scale-100">
+      <div ref={modalRef} className="bg-white rounded-2xl shadow-2xl max-w-md w-full transform transition-all duration-300 ease-in-out scale-100">
         <div className="p-6">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold text-gray-900">
