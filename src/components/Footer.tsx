@@ -1,5 +1,4 @@
 import React from 'react';
-import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
 import { Link } from './Link';
 
 export const Footer: React.FC = () => {
@@ -19,20 +18,6 @@ export const Footer: React.FC = () => {
             <p className="text-gray-400 mb-6">
               Streamline your project management with AI-powered QA automation.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Github className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Mail className="w-5 h-5" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -67,24 +52,19 @@ export const Footer: React.FC = () => {
             <h3 className="font-semibold text-lg mb-4">Support</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/help" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/help" external className="text-gray-400 hover:text-white transition-colors">
                   Help Center
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/privacy" external className="text-gray-400 hover:text-white transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/terms" external className="text-gray-400 hover:text-white transition-colors">
                   Terms of Service
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

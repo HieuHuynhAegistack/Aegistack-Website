@@ -4,7 +4,7 @@ import { Footer } from '../components/Footer';
 import { Shield, Lock, Eye, Database } from 'lucide-react';
 
 export const PrivacyPage: React.FC = () => {
-  return (
+    return (
     <div className="min-h-screen bg-white">
       <Header />
       

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link } from './Link';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,9 +46,12 @@ export const Header: React.FC = () => {
               >
                 Features
               </button>
-              <Link href="/pricing" className="text-gray-600 transition-colors hover:text-gray-900">
+              <button
+                onClick={() => scrollToSection('pricing')}
+                className="text-gray-600 transition-colors hover:text-gray-900"
+              >
                 Pricing
-              </Link>
+              </button>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="text-gray-600 transition-colors hover:text-gray-900"
@@ -88,9 +90,12 @@ export const Header: React.FC = () => {
               >
                 Features
               </button>
-              <Link href="/pricing" className="text-gray-600 hover:text-gray-900">
+              <button
+                onClick={() => scrollToSection('pricing')}
+                className="text-left text-gray-600 hover:text-gray-900"
+              >
                 Pricing
-              </Link>
+              </button>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="text-left text-gray-600 hover:text-gray-900"

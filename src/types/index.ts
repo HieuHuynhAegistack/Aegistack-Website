@@ -15,6 +15,7 @@ export interface PricingPlan {
   features: string[];
   popular?: boolean;
   cta: string;
+  buttonVariant?: string;
 }
 
 export interface TestCase {

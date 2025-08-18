@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Modal } from './Modal';
+import { ContactForm } from './ContactForm';
 
 export const Hero: React.FC = () => {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   return (
     <section className="relative pt-20 pb-32 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-cyan-50">
       {/* Background decoration */}
@@ -25,7 +28,10 @@ export const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
-              <button className="flex items-center justify-center space-x-2 text-lg btn-primary">
+              <button 
+                onClick={() => setIsContactModalOpen(true)}
+                className="flex items-center justify-center space-x-2 text-lg btn-primary"
+              >
                 <span>Get Started Free</span>
                 <ArrowRight className="w-5 h-5" />
               </button>
@@ -99,6 +105,17 @@ export const Hero: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Contact Modal */}
+      <Modal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)}
+        title="Get Started with AegisStack"
+      >
+        <div className="p-6">
+          <ContactForm />
+        </div>
+      </Modal>
     </section>
   );
 };

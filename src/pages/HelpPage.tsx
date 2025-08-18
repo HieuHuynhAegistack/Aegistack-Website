@@ -52,7 +52,6 @@ const helpCategories = [
 
 export const HelpPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const filteredCategories = helpCategories.filter(category =>
     category.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -61,7 +60,7 @@ export const HelpPage: React.FC = () => {
     )
   );
 
-  return (
+    return (
     <div className="min-h-screen bg-white">
       <Header />
       

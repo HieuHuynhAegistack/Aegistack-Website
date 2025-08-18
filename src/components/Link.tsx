@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
 interface LinkProps {
   href: string;
@@ -8,27 +9,34 @@ interface LinkProps {
 }
 
 export const Link: React.FC<LinkProps> = ({ href, children, className = '', external = false }) => {
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    if (external) {
-      window.open(href, '_blank', 'noopener,noreferrer');
-    } else if (href.startsWith('#')) {
-      const element = document.querySelector(href);
+  // Handle hash links for smooth scrolling
+  if (href.startsWith('#')) {
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const element = document.getElementById(targetId);
       element?.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      // For internal navigation, you would use your router here
-      console.log(`Navigate to: ${href}`);
-    }
-  };
+    };
+    return (
+      <a href={href} onClick={handleClick} className={className}>
+        {children}
+      </a>
+    );
+  }
 
+  // Handle external links
+  if (external) {
+    return (
+      <a href={href} className={className} target="_blank" rel="noopener noreferrer">
+        {children}
+      </a>
+    );
+  }
+
+  // Handle internal navigation with React Router
   return (
-    <a
-      href={href}
-      onClick={handleClick}
-      className={className}
-      {...(external && { target: '_blank', rel: 'noopener noreferrer' })}
-    >
+    <RouterLink to={href} className={className}>
       {children}
-    </a>
+    </RouterLink>
   );
 };

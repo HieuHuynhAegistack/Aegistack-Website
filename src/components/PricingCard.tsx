@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, Star } from 'lucide-react';
+import { Check } from 'lucide-react';
 import type { PricingPlan } from '../types';
 
 interface PricingCardProps {
@@ -8,47 +8,54 @@ interface PricingCardProps {
 }
 
 export const PricingCard: React.FC<PricingCardProps> = ({ plan, onSelect }) => {
-  return (
-    <div className={`card p-8 relative ${plan.popular ? 'ring-2 scale-105' : ''}`} style={plan.popular ? { borderColor: '#FEBC32' } : {}}>
-      {plan.popular && (
-        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-          <div className="text-white px-4 py-2 rounded-full text-sm font-medium flex items-center space-x-1" style={{ backgroundColor: '#FEBC32', color: '#1e293b' }}>
-            <Star className="w-4 h-4" />
-            <span>Most Popular</span>
-          </div>
-        </div>
-      )}
+  const cardClasses = [
+    'p-8',
+    'flex',
+    'flex-col',
+    'h-full',
+    'relative',
+    'bg-white',
+    'rounded-2xl',
+    'shadow-lg',
+    plan.popular ? 'border-2 border-yellow-400' : 'border border-gray-200'
+  ];
 
-      <div className="text-center mb-8">
-        <h3 className="font-heading text-2xl font-bold text-gray-900 mb-2">
-          {plan.name}
-        </h3>
-        <p className="text-gray-600 mb-4">{plan.description}</p>
-        <div className="flex items-baseline justify-center">
-          <span className="text-5xl font-bold text-gray-900">{plan.price}</span>
-          <span className="text-gray-500 ml-2">/{plan.period}</span>
-        </div>
+  return (
+    <div className={cardClasses.join(' ')}>
+      <h3 className="text-lg font-semibold mb-2 text-gray-900">{plan.name}</h3>
+      <div className="mb-6">
+        {plan.price === 'Free' ? (
+          <span className="text-5xl font-bold text-gray-900">Free</span>
+        ) : (
+          <div className="flex items-baseline">
+            <span className="text-5xl font-bold text-gray-900">{plan.price}</span>
+            <span className="text-gray-500 ml-2">/mo</span>
+          </div>
+        )}
       </div>
 
-      <ul className="space-y-4 mb-8">
+      <hr className="mb-6 border-gray-200" />
+
+      <p className="mb-4 text-sm text-gray-600">{plan.description}</p>
+
+      <ul className="space-y-3 mb-8 text-gray-700 flex-grow">
         {plan.features.map((feature, index) => (
           <li key={index} className="flex items-start space-x-3">
             <div className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mt-0.5">
               <Check className="w-3 h-3 text-green-600" />
             </div>
-            <span className="text-gray-700">{feature}</span>
+            <span>{feature}</span>
           </li>
         ))}
       </ul>
 
-      <button
-        onClick={onSelect}
-        className={`w-full py-3 px-4 rounded-xl font-medium transition-all ${
-          plan.popular ? 'btn-primary' : 'btn-secondary'
-        }`}
-      >
-        {plan.cta}
-      </button>
+      <div className="mt-auto">
+        <button 
+          onClick={onSelect} 
+          className={`w-full ${plan.popular ? 'btn-yellow' : 'btn-secondary'}`}>
+          {plan.cta}
+        </button>
+      </div>
     </div>
   );
 };
