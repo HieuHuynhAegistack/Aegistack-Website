@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { Modal } from '../components/Modal';
+import { ContactForm } from '../components/ContactForm';
 import { Search, Book, MessageCircle, Video, FileText, ChevronRight } from 'lucide-react';
 
 const helpCategories = [
@@ -52,6 +54,7 @@ const helpCategories = [
 
 export const HelpPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const filteredCategories = helpCategories.filter(category =>
     category.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -128,12 +131,12 @@ export const HelpPage: React.FC = () => {
             <p className="text-lg text-gray-600 mb-8">
               Can't find what you're looking for? Our support team is here to help.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary">
+            <div className="flex justify-center">
+              <button 
+                onClick={() => setIsContactModalOpen(true)}
+                className="btn-primary"
+              >
                 Contact Support
-              </button>
-              <button className="btn-secondary">
-                Schedule a Demo
               </button>
             </div>
           </div>
@@ -141,6 +144,17 @@ export const HelpPage: React.FC = () => {
       </main>
 
       <Footer />
+      
+      {/* Contact Modal */}
+      <Modal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)}
+        title="Contact Support"
+      >
+        <div className="p-6">
+          <ContactForm />
+        </div>
+      </Modal>
     </div>
   );
 };

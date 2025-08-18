@@ -100,7 +100,7 @@ export const Hero: React.FC = () => {
               <div className="text-sm font-medium">✓ Tests Passed</div>
             </div>
             <div className="absolute p-3 text-white bg-blue-500 shadow-lg -bottom-4 -left-4 rounded-2xl">
-              <div className="text-sm font-medium">🤖 AI Generated</div>
+                            <div className="text-sm font-medium">✨ AI Generated</div>
             </div>
           </div>
         </div>

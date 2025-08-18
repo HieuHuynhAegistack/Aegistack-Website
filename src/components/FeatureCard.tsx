@@ -5,7 +5,8 @@ import {
   Zap, 
   TestTube, 
   BarChart3,
-  ArrowRight 
+  ArrowRight,
+  ClipboardCheck
 } from 'lucide-react';
 import type { Feature } from '../types';
 
@@ -15,6 +16,7 @@ const iconMap = {
   zap: Zap,
   'test-tube': TestTube,
   'bar-chart': BarChart3,
+  'clipboard-check': ClipboardCheck,
 };
 
 interface FeatureCardProps {
@@ -36,15 +38,17 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({ feature, onClick }) =>
             <IconComponent className="w-6 h-6" style={{ color: '#FEBC32' }} />
           </div>
         </div>
-        <div className="flex-1">
-          <h3 className="mb-2 text-xl font-semibold text-gray-900 font-heading">
-            {feature.title}
-          </h3>
-          <p className="mb-4 leading-relaxed text-gray-600">
-            {feature.description}
-          </p>
-          <div className="flex items-center font-medium transition-colors" style={{ color: '#FEBC32' }}>
-            <span className="text-sm">Learn more</span>
+        <div className="flex-1 flex flex-col h-full">
+          <div className="flex-grow">
+            <h3 className="mb-2 text-xl font-semibold text-gray-900 font-heading">
+              {feature.title}
+            </h3>
+            <p className="mb-4 leading-relaxed text-gray-600">
+              {feature.description}
+            </p>
+          </div>
+          <div className="flex items-center font-medium transition-colors mt-auto" style={{ color: '#FEBC32' }}>
+            <span className="text-sm">View Details</span>
             <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
           </div>
         </div>

@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { Modal } from '../components/Modal';
+import { ContactForm } from '../components/ContactForm';
 import { Shield, Lock, Eye, Database } from 'lucide-react';
 
 export const PrivacyPage: React.FC = () => {
-    return (
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  return (
     <div className="min-h-screen bg-white">
       <Header />
       
@@ -156,7 +160,10 @@ export const PrivacyPage: React.FC = () => {
                   <p className="text-blue-800 mb-4">
                     Contact our privacy team at privacy@aegistack.com or reach out through our support channels.
                   </p>
-                  <button className="btn-primary">
+                  <button 
+                    onClick={() => setIsContactModalOpen(true)}
+                    className="btn-primary"
+                  >
                     Contact Privacy Team
                   </button>
                 </div>
@@ -167,6 +174,17 @@ export const PrivacyPage: React.FC = () => {
       </main>
 
       <Footer />
+      
+      {/* Contact Modal */}
+      <Modal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)}
+        title="Contact Privacy Team"
+      >
+        <div className="p-6">
+          <ContactForm />
+        </div>
+      </Modal>
     </div>
   );
 };

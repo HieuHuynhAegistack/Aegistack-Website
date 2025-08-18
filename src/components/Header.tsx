@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
+import { Modal } from './Modal';
+import { ContactForm } from './ContactForm';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
@@ -73,7 +76,10 @@ export const Header: React.FC = () => {
               </button>
             </nav>
             
-            <button className="btn-primary">
+            <button 
+              onClick={() => setIsContactModalOpen(true)}
+              className="btn-primary"
+            >
               Get Started
             </button>
           </div>
@@ -116,7 +122,10 @@ export const Header: React.FC = () => {
                 Contact
               </button>
               <div className="flex flex-col pt-4 space-y-3 border-t border-gray-100">
-                <button className="text-center btn-primary">
+                <button 
+                  onClick={() => setIsContactModalOpen(true)}
+                  className="text-center btn-primary"
+                >
                   Get Started
                 </button>
               </div>
@@ -124,6 +133,17 @@ export const Header: React.FC = () => {
           </div>
         )}
       </div>
+
+      {/* Contact Modal */}
+      <Modal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)}
+        title="Get Started with AegisStack"
+      >
+        <div className="p-6">
+          <ContactForm />
+        </div>
+      </Modal>
     </header>
   );
 };

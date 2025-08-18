@@ -56,11 +56,11 @@ export const ContactForm: React.FC = () => {
 
   if (isSubmitted) {
     return (
-      <div className="card p-8 text-center">
-        <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#FEF3CD' }}>
+      <div className="p-8 text-center card">
+        <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full" style={{ backgroundColor: '#FEF3CD' }}>
           <CheckCircle className="w-8 h-8" style={{ color: '#FEBC32' }} />
         </div>
-        <h3 className="font-heading text-xl font-semibold text-gray-900 mb-2">
+        <h3 className="mb-2 text-xl font-semibold text-gray-900 font-heading">
           Message Sent!
         </h3>
         <p className="text-gray-600">
@@ -71,15 +71,15 @@ export const ContactForm: React.FC = () => {
   }
 
   return (
-    <div className="card p-8">
-      <h3 className="font-heading text-2xl font-bold text-gray-900 mb-6">
+    <div className="p-8 card">
+      <h3 className="mb-6 text-2xl font-bold text-gray-900 font-heading">
         Send us a message
       </h3>
       
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid gap-6 md:grid-cols-2">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block mb-2 text-sm font-medium text-gray-700">
               Name *
             </label>
             <input
@@ -98,7 +98,7 @@ export const ContactForm: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block mb-2 text-sm font-medium text-gray-700">
               Email *
             </label>
             <input
@@ -118,7 +118,7 @@ export const ContactForm: React.FC = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block mb-2 text-sm font-medium text-gray-700">
             Company (Optional)
           </label>
           <input
@@ -132,7 +132,7 @@ export const ContactForm: React.FC = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block mb-2 text-sm font-medium text-gray-700">
             Message *
           </label>
           <textarea
@@ -152,7 +152,7 @@ export const ContactForm: React.FC = () => {
 
         <button
           type="submit"
-          className="w-full btn-primary flex items-center justify-center space-x-2"
+          className="flex items-center justify-center w-full space-x-2 btn-primary"
         >
           <Send className="w-5 h-5" />
           <span>Send Message</span>

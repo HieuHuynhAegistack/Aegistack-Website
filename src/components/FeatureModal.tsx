@@ -9,8 +9,8 @@ interface FeatureModalProps {
 
 export const FeatureModal: React.FC<FeatureModalProps> = ({ feature, onClose }) => {
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
         <div className="p-8">
           <div className="flex items-center justify-between mb-6">
             <h2 className="font-heading text-2xl font-bold text-gray-900">
@@ -36,8 +36,8 @@ export const FeatureModal: React.FC<FeatureModalProps> = ({ feature, onClose }) 
               <ul className="space-y-3">
                 {feature.details.map((detail, index) => (
                   <li key={index} className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5">
-                      <Check className="w-4 h-4 text-green-600" />
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-200 rounded-full flex items-center justify-center mt-0.5">
+                      <Check className="w-4 h-4 text-green-800" />
                     </div>
                     <span className="text-gray-700">{detail}</span>
                   </li>
@@ -46,11 +46,6 @@ export const FeatureModal: React.FC<FeatureModalProps> = ({ feature, onClose }) 
             </div>
           )}
 
-          <div className="mt-8 pt-6 border-t border-gray-100">
-            <button className="btn-primary w-full">
-              Start Using This Feature
-            </button>
-          </div>
         </div>
       </div>
     </div>

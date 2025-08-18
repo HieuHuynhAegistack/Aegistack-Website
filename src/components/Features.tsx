@@ -63,6 +63,18 @@ const features: Feature[] = [
       'Test coverage and quality metrics',
       'Export capabilities for stakeholder reporting'
     ]
+  },
+  {
+    id: 'test-case-automation',
+    title: 'Test Case Automation',
+    description: 'Automate your testing process with intelligent test script generation, seamless execution, and faster validation cycles. Save time, reduce manual effort, and ensure higher product quality.',
+    icon: 'clipboard-check',
+    details: [
+      'Automatically generate test scripts from requirements or user flows',
+      'Execute automated tests across multiple environments and platforms',
+      'Real-time reporting with detailed logs and insights',
+      'Integrate seamlessly with CI/CD pipelines for continuous testing'
+    ]
   }
 ];
 
