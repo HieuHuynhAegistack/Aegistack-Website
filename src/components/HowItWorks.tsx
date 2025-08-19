@@ -1,12 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Bot, Settings, Zap } from 'lucide-react';
-import { AIKeyModal } from './AIKeyModal';
 
 export const HowItWorks: React.FC = () => {
-  const [showAIModal, setShowAIModal] = useState(false);
-
   return (
     <section id="how-it-works" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,12 +31,6 @@ export const HowItWorks: React.FC = () => {
                   Set up your AI preferences and API keys securely. Your credentials are encrypted 
                   and stored safely in your environment.
                 </p>
-                <button 
-                  onClick={() => setShowAIModal(true)}
-                  className="mt-3 text-blue-600 hover:text-blue-700 font-medium text-sm"
-                >
-                  Configure AI Settings →
-                </button>
               </div>
             </div>
 
@@ -84,10 +75,6 @@ export const HowItWorks: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {showAIModal && (
-        <AIKeyModal onClose={() => setShowAIModal(false)} />
-      )}
     </section>
   );
 };
