@@ -7,14 +7,16 @@ export const metadata: Metadata = {
 };
 
 const sections = [
-  { id: 'introduction', title: 'Introduction' },
-  { id: 'info-collection', title: 'Information We Collect' },
-  { id: 'info-use', title: 'How We Use Your Information' },
-  { id: 'data-security', title: 'Data Security' },
-  { id: 'data-sharing', title: 'Data Sharing' },
-  { id: 'your-rights', title: 'Your Rights' },
-  { id: 'policy-changes', title: 'Changes to This Policy' },
-  { id: 'contact', title: 'Contact Us' },
+  { id: 'info-collection', title: '1. Information We Collect' },
+  { id: 'info-use', title: '2. How We Use Your Information' },
+  { id: 'data-ownership', title: '3. Data Ownership and Confidentiality' },
+  { id: 'data-security', title: '4. Data Security' },
+  { id: 'data-retention', title: '5. Data Retention' },
+  { id: 'third-party', title: '6. Third-Party Services' },
+  { id: 'your-rights', title: '7. Your Rights' },
+  { id: 'childrens-privacy', title: '8. Children’s Privacy' },
+  { id: 'policy-changes', title: '9. Changes to This Policy' },
+  { id: 'contact', title: '10. Contact Us' },
 ];
 
 export default function Privacy() {
@@ -23,86 +25,113 @@ export default function Privacy() {
       title="Privacy Policy"
       sections={sections}
     >
-      <section id="introduction">
-        <h2>Introduction</h2>
-        <p>
-          Welcome to AegisStack. We are committed to protecting your privacy and handling your personal data in an open and transparent manner. This privacy policy explains how we collect, use, process, and safeguard your information when you use our services.
-        </p>
-      </section>
+      <p>
+        <strong>Effective Date:</strong> August 19, 2025
+      </p>
+      <p>
+        This Privacy Policy describes how <strong>Aegisol</strong> ("we", "our", or "us") collects, uses, and protects your information when you use our AI-powered tool <strong>Aegistack</strong>, which automatically converts manual test cases into automation test cases ("the Service").
+      </p>
 
       <section id="info-collection">
-        <h2>Information We Collect</h2>
-        <p>
-          We collect information that you provide directly to us when you use our services. This includes:
-        </p>
+        <h2>1. Information We Collect</h2>
+        <p>When you use Aegistack, we may collect the following types of information:</p>
         <ul>
           <li>
-            <strong>Account Information:</strong> When you register for an account, we collect personal details such as your name, email address, and password.
+            <strong>User-Provided Data</strong>:
+            <ul>
+              <li>Test case content you upload or input (manual test cases, test scripts, or related documentation).</li>
+              <li>Account registration details such as name, email address, and organization.</li>
+            </ul>
           </li>
           <li>
-            <strong>Project Data:</strong> We collect and store the data you create within our platform, including project details, test cases, and related files.
+            <strong>Automatically Collected Data</strong>:
+            <ul>
+              <li>Activity logs, usage history, and generated outputs for performance monitoring.</li>
+              <li>Device and browser metadata (IP address, operating system, browser type, time zone).</li>
+            </ul>
           </li>
           <li>
-            <strong>Usage Information:</strong> We automatically collect information about your interactions with our services, such as the features you use, the time and date of your visits, and other system activity.
-          </li>
-          <li>
-            <strong>Communications:</strong> If you contact us directly, we may receive additional information about you such as your name, email address, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.
+            <strong>Cookies & Analytics</strong>:
+            <ul>
+              <li>Aegistack may use cookies or analytics tools to enhance user experience and analyze traffic trends.</li>
+            </ul>
           </li>
         </ul>
       </section>
 
       <section id="info-use">
-        <h2>How We Use Your Information</h2>
-        <p>We use the information we collect for various purposes, including to:</p>
+        <h2>2. How We Use Your Information</h2>
+        <p>The information we collect is used to:</p>
         <ul>
-          <li>Provide, operate, and maintain our services;</li>
-          <li>Improve, personalize, and expand our services;</li>
-          <li>Understand and analyze how you use our services;</li>
-          <li>Develop new products, services, features, and functionality;</li>
-          <li>Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the service, and for marketing and promotional purposes;</li>
-          <li>Process your transactions;</li>
-          <li>Find and prevent fraud.</li>
+          <li>Operate and improve the Aegistack Service.</li>
+          <li>Automatically generate or convert manual test cases into automation test cases.</li>
+          <li>Enhance AI models (only with anonymized and aggregated data).</li>
+          <li>Send notifications, provide customer support, or share security updates.</li>
+          <li>Ensure compliance with legal and contractual obligations.</li>
+        </ul>
+      </section>
+
+      <section id="data-ownership">
+        <h2>3. Data Ownership and Confidentiality</h2>
+        <ul>
+          <li>You <strong>retain full ownership</strong> of the test case data you provide.</li>
+          <li>We do <strong>not sell or share</strong> your test cases with third parties for advertising purposes.</li>
+          <li>All test case outputs generated by Aegistack remain accessible only to you (unless you choose to share them).</li>
         </ul>
       </section>
 
       <section id="data-security">
-        <h2>Data Security</h2>
-        <p>
-          We implement a variety of security measures to maintain the safety of your personal information. Your data is stored on secure servers and is encrypted both in transit and at rest. We are committed to protecting your data against unauthorized access, alteration, disclosure, or destruction.
-        </p>
+        <h2>4. Data Security</h2>
+        <ul>
+          <li>All data is transmitted using <strong>SSL encryption (HTTPS)</strong>.</li>
+          <li>Stored data is protected by industry-standard security practices and strict access controls.</li>
+          <li>We regularly review and update our security measures to protect against unauthorized access, alteration, or destruction.</li>
+        </ul>
       </section>
 
-      <section id="data-sharing">
-        <h2>Data Sharing</h2>
-        <p>
-          We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information unless we provide users with advance notice. This does not include website hosting partners and other parties who assist us in operating our website, conducting our business, or serving our users, so long as those parties agree to keep this information confidential.
-        </p>
+      <section id="data-retention">
+        <h2>5. Data Retention</h2>
+        <ul>
+          <li>Test case data may be temporarily stored to deliver the Service.</li>
+          <li>You may request deletion of your data at any time by contacting us.</li>
+          <li>Aggregated and anonymized data may be retained for research and service improvement.</li>
+        </ul>
+      </section>
+
+      <section id="third-party">
+        <h2>6. Third-Party Services</h2>
+        <ul>
+          <li>Aegistack may integrate with third-party platforms (e.g., GitHub, Jira, CI/CD tools) at your request.</li>
+          <li>When integrated, data shared with third parties will be governed by their respective privacy policies.</li>
+        </ul>
       </section>
 
       <section id="your-rights">
-        <h2>Your Rights</h2>
-        <p>You have certain rights regarding your personal data. You have the right to:</p>
+        <h2>7. Your Rights</h2>
+        <p>Depending on your jurisdiction, you may have the right to:</p>
         <ul>
-          <li>Access the personal data we hold about you.</li>
-          <li>Request that we correct any inaccurate personal data.</li>
-          <li>Request that we delete your personal data.</li>
-          <li>Request a copy of your personal data in a portable format.</li>
+          <li>Access, update, or delete your personal data.</li>
+          <li>Restrict or object to specific data processing activities.</li>
+          <li>Request a copy of your data in a portable format.</li>
         </ul>
-        <p>You can exercise these rights by contacting us through our support channels.</p>
+        <p>To exercise your rights, please contact us at: <strong><a href="mailto:tech@aegistack.com">tech@aegistack.com</a></strong></p>
+      </section>
+
+      <section id="childrens-privacy">
+        <h2>8. Children’s Privacy</h2>
+        <p>The Service is <strong>not intended for individuals under the age of 16</strong>. We do not knowingly collect personal information from children.</p>
       </section>
 
       <section id="policy-changes">
-        <h2>Changes to This Policy</h2>
-        <p>
-          We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.
-        </p>
+        <h2>9. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any updates will be reflected by changing the “Effective Date” at the top of this document.</p>
       </section>
 
       <section id="contact">
-        <h2>Contact Us</h2>
-        <p>
-          If you have any questions about this Privacy Policy, please contact us at <a href="mailto:support@aegisstack.com">support@aegisstack.com</a>.
-        </p>
+        <h2>10. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or our practices, please contact us at:</p>
+        <p>📧 <strong><a href="mailto:tech@aegistack.com">tech@aegistack.com</a></strong></p>
+        <p>🏢 <strong>Aegisol</strong> – Dong Dinh hamlet, Dien Toan commune, Dien Khanh district, Khanh Hoa province, Vietnam</p>
       </section>
     </LegalLayout>
   );

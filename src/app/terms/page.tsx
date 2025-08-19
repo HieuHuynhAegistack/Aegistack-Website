@@ -2,104 +2,145 @@ import type { Metadata } from 'next';
 import LegalLayout from '../components/LegalLayout';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | AegisStack',
-  description: 'Read the Terms of Service for using AegisStack. Understand your rights and responsibilities when using our project management and QA platform.',
+  title: 'Terms of Use | AegisStack',
+  description: 'Read the terms and conditions for using AegisStack. Understand your rights and responsibilities when using our AI-powered test automation platform.',
 };
 
 const sections = [
-  { id: 'acceptance', title: 'Acceptance of Terms' },
-  { id: 'license', title: 'Use License' },
-  { id: 'accounts', title: 'User Accounts' },
-  { id: 'prohibited', title: 'Prohibited Uses' },
-  { id: 'termination', title: 'Termination' },
-  { id: 'disclaimer', title: 'Disclaimer' },
-  { id: 'liability', title: 'Limitation of Liability' },
-  { id: 'governing-law', title: 'Governing Law' },
-  { id: 'contact', title: 'Contact Information' },
+  { id: 'eligibility', title: '1. Eligibility' },
+  { id: 'use-of-service', title: '2. Use of the Service' },
+  { id: 'account-responsibilities', title: '3. Account Responsibilities' },
+  { id: 'data-and-ownership', title: '4. Data and Ownership' },
+  { id: 'intellectual-property', title: '5. Intellectual Property' },
+  { id: 'service-availability', title: '6. Service Availability' },
+  { id: 'fees-and-payment', title: '7. Fees and Payment' },
+  { id: 'privacy', title: '8. Privacy' },
+  { id: 'disclaimer-of-warranties', title: '9. Disclaimer of Warranties' },
+  { id: 'limitation-of-liability', title: '10. Limitation of Liability' },
+  { id: 'termination', title: '11. Termination' },
+  { id: 'governing-law', title: '12. Governing Law' },
+  { id: 'changes-to-terms', title: '13. Changes to Terms' },
+  { id: 'contact-us', title: '14. Contact Us' },
 ];
 
 export default function Terms() {
   return (
     <LegalLayout
-      title="Terms of Service"
+      title="Terms of Use"
       sections={sections}
     >
-      <section id="acceptance">
-        <h2>Acceptance of Terms</h2>
-        <p>
-          By accessing and using AegisStack ("the Service"), you accept and agree to be bound by the terms and provisions of this agreement. In addition, when using these particular services, you shall be subject to any posted guidelines or rules applicable to such services. Any participation in this service will constitute acceptance of this agreement. If you do not agree to abide by the above, please do not use this service.
-        </p>
+      <p>
+        <strong>Effective Date:</strong> August 19, 2025
+      </p>
+      <p>
+        These Terms of Use (“Terms”) govern your access to and use of Aegistack, an AI-powered tool provided by Aegisol (“we”, “our”, “us”), which enables automatic conversion of manual test cases into automation test cases (“the Service”). By accessing or using the Service, you agree to these Terms. If you do not agree, please do not use the Service.
+      </p>
+
+      <section id="eligibility">
+        <h2>1. Eligibility</h2>
+        <p>You must be at least 18 years old to use the Service.</p>
+        <p>By using Aegistack, you confirm that you have the legal authority to enter into this agreement on behalf of yourself or your organization.</p>
       </section>
 
-      <section id="license">
-        <h2>Use License</h2>
-        <p>
-          Permission is granted to temporarily access the materials on AegisStack's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
-        </p>
+      <section id="use-of-service">
+        <h2>2. Use of the Service</h2>
+        <p>You agree to use Aegistack only for lawful purposes and in compliance with applicable laws and regulations.</p>
+        <p>You may not:</p>
         <ul>
-          <li>Modify or copy the materials;</li>
-          <li>Use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
-          <li>Attempt to decompile or reverse engineer any software contained on AegisStack's website;</li>
-          <li>Remove any copyright or other proprietary notations from the materials; or</li>
-          <li>Transfer the materials to another person or "mirror" the materials on any other server.</li>
+          <li>Use the Service to upload or process unlawful, harmful, or infringing content.</li>
+          <li>Attempt to reverse-engineer, decompile, or misuse the Service.</li>
+          <li>Interfere with or disrupt the integrity or performance of Aegistack.</li>
         </ul>
-        <p>
-          This license shall automatically terminate if you violate any of these restrictions and may be terminated by AegisStack at any time.
-        </p>
       </section>
 
-      <section id="accounts">
-        <h2>User Accounts</h2>
-        <p>
-          When you create an account with us, you must provide us with information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Service. You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password.
-        </p>
-      </section>
-
-      <section id="prohibited">
-        <h2>Prohibited Uses</h2>
-        <p>You agree not to use the Service:</p>
+      <section id="account-responsibilities">
+        <h2>3. Account Responsibilities</h2>
         <ul>
-          <li>In any way that violates any applicable national or international law or regulation.</li>
-          <li>For the purpose of exploiting, harming, or attempting to exploit or harm minors in any way.</li>
-          <li>To transmit, or procure the sending of, any advertising or promotional material, including any "junk mail", "chain letter," "spam," or any other similar solicitation.</li>
-          <li>To impersonate or attempt to impersonate AegisStack, an AegisStack employee, another user, or any other person or entity.</li>
-          <li>To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Service, or which, as determined by us, may harm AegisStack or users of the Service or expose them to liability.</li>
+          <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
+          <li>You are solely responsible for all activities conducted through your account.</li>
+          <li>You must notify us immediately if you suspect unauthorized use of your account.</li>
+        </ul>
+      </section>
+
+      <section id="data-and-ownership">
+        <h2>4. Data and Ownership</h2>
+        <ul>
+          <li>You retain full ownership of the test cases, scripts, and documentation you input into Aegistack.</li>
+          <li>We claim no ownership over your data, except the rights necessary to operate and improve the Service.</li>
+          <li>Generated outputs (automated test cases) are provided to you for your use, subject to these Terms.</li>
+        </ul>
+      </section>
+
+      <section id="intellectual-property">
+        <h2>5. Intellectual Property</h2>
+        <ul>
+          <li>All rights, title, and interest in Aegistack, including its AI models, software, and trademarks, remain the exclusive property of Aegisol.</li>
+          <li>These Terms do not grant you any license to use Aegisol’s trademarks or intellectual property beyond what is expressly stated.</li>
+        </ul>
+      </section>
+
+      <section id="service-availability">
+        <h2>6. Service Availability</h2>
+        <ul>
+          <li>We strive to keep Aegistack available at all times but do not guarantee uninterrupted or error-free operation.</li>
+          <li>We may update, suspend, or discontinue any part of the Service at our discretion.</li>
+        </ul>
+      </section>
+
+      <section id="fees-and-payment">
+        <h2>7. Fees and Payment</h2>
+        <ul>
+          <li>Some features of Aegistack may require payment of fees.</li>
+          <li>All payments are non-refundable unless otherwise stated.</li>
+          <li>Failure to pay may result in suspension or termination of your access.</li>
+        </ul>
+      </section>
+
+      <section id="privacy">
+        <h2>8. Privacy</h2>
+        <p>Your use of Aegistack is also governed by our <a href="/privacy" className="text-blue-600 hover:text-blue-700">Privacy Policy</a>, which explains how we collect, use, and protect your information.</p>
+      </section>
+
+      <section id="disclaimer-of-warranties">
+        <h2>9. Disclaimer of Warranties</h2>
+        <p>Aegistack is provided on an “as is” and “as available” basis.</p>
+        <p>We disclaim all warranties, express or implied, including but not limited to merchantability, fitness for a particular purpose, and non-infringement.</p>
+        <p>We do not guarantee that outputs generated by Aegistack will be error-free, accurate, or suitable for your intended purpose.</p>
+      </section>
+
+      <section id="limitation-of-liability">
+        <h2>10. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, Aegisol shall not be liable for:</p>
+        <ul>
+          <li>Any indirect, incidental, special, or consequential damages.</li>
+          <li>Loss of data, profits, or business opportunities resulting from use of the Service.</li>
+          <li>Our total liability for any claim relating to the Service will not exceed the fees you paid to use Aegistack in the preceding 12 months.</li>
         </ul>
       </section>
 
       <section id="termination">
-        <h2>Termination</h2>
-        <p>
-          We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms. Upon termination, your right to use the Service will immediately cease.
-        </p>
-      </section>
-
-      <section id="disclaimer">
-        <h2>Disclaimer</h2>
-        <p>
-          The materials on AegisStack's website are provided on an 'as is' basis. AegisStack makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
-        </p>
-      </section>
-
-      <section id="liability">
-        <h2>Limitation of Liability</h2>
-        <p>
-          In no event shall AegisStack or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on AegisStack's website, even if AegisStack or an AegisStack authorized representative has been notified orally or in writing of the possibility of such damage.
-        </p>
+        <h2>11. Termination</h2>
+        <ul>
+          <li>We may suspend or terminate your access to Aegistack if you violate these Terms.</li>
+          <li>You may discontinue use of the Service at any time.</li>
+        </ul>
       </section>
 
       <section id="governing-law">
-        <h2>Governing Law</h2>
-        <p>
-          These terms and conditions are governed by and construed in accordance with the laws of the jurisdiction in which AegisStack operates, and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.
-        </p>
+        <h2>12. Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of the Socialist Republic of Vietnam, without regard to its conflict of laws principles.</p>
       </section>
 
-      <section id="contact">
-        <h2>Contact Information</h2>
-        <p>
-          If you have any questions about these Terms of Service, please contact us at <a href="mailto:support@aegisstack.com">support@aegisstack.com</a>.
-        </p>
+      <section id="changes-to-terms">
+        <h2>13. Changes to Terms</h2>
+        <p>We may revise these Terms from time to time. Any changes will take effect when posted on our website, with the updated “Effective Date” at the top. Continued use of the Service indicates your acceptance of the updated Terms.</p>
+      </section>
+
+      <section id="contact-us">
+        <h2>14. Contact Us</h2>
+        <p>If you have questions regarding these Terms, please contact us at:</p>
+        <p> 📧 <a href="mailto:tech@aegistack.com">tech@aegistack.com</a></p>
+        <p> 🏢 Aegisol – Dong Dinh hamlet, Dien Toan commune, Dien Khanh district, Khanh Hoa province, Vietnam</p>
       </section>
     </LegalLayout>
   );

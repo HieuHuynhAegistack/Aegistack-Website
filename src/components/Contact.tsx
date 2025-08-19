@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Mail, Globe } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   return (
@@ -27,21 +27,27 @@ export const Contact: React.FC = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">Email Us</h3>
                   <p className="text-gray-600">Our team is here to help.</p>
-                  <a href="mailto:support@aegistack.com" className="text-blue-600 hover:text-blue-700 font-medium">
-                    support@aegistack.com
+                  <a href="mailto:tech@aegistack.com" className="text-blue-600 hover:text-blue-700 font-medium">
+                    tech@aegistack.com
                   </a>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                  <Globe className="w-6 h-6 text-green-600" />
+                  <Phone className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Our Website</h3>
-                  <p className="text-gray-600">Explore our platform and features.</p>
-                  <a href="https://aegistack.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 font-medium">
-                    aegistack.com
-                  </a>
+                  <h3 className="text-lg font-semibold text-gray-900">Support Phone</h3>
+                  <p className="text-gray-600">+84 90 1904798</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-purple-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900">Our Address</h3>
+                  <p className="text-gray-600">Dong Dinh hamlet, Dien Toan commune, Dien Khanh district, Khanh Hoa province, Vietnam</p>
                 </div>
               </div>
             </div>

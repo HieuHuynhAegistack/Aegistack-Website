@@ -71,11 +71,6 @@ export const Footer: React.FC = () => {
             <h3 className="font-semibold text-lg mb-4">Support</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/help" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                  Help Center
-                </Link>
-              </li>
-              <li>
                 <Link href="/privacy" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                   Privacy Policy
                 </Link>
