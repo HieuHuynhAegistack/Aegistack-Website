@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 
 export const Footer: React.FC = () => {
@@ -32,10 +33,12 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-1">
                         <div className="flex items-center mb-4">
               <button onClick={handleLogoClick} className="focus:outline-none">
-              <img 
-                src="/aegistack-light.webp" 
+              <Image
+                src="/aegistack-light.webp"
                 alt="AegisStack"
-                className="h-8 w-auto"
+                height={32}
+                width={128}
+                className="hover:opacity-80 transition-opacity"
               />
             </button>
             </div>

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { Modal } from './Modal';
 import { ContactForm } from './ContactForm';
 
@@ -37,10 +38,12 @@ export const Header: React.FC = () => {
           {/* Logo */}
                     <div className="flex items-center space-x-3">
             <button onClick={handleLogoClick} className="focus:outline-none">
-              <img 
-                src="/aegistack-light.webp" 
+              <Image
+                src="/aegistack-light.webp"
                 alt="AegisStack"
-                className="w-auto h-8 hover:opacity-80 transition-opacity"
+                height={32}
+                width={128}
+                className="hover:opacity-80 transition-opacity"
               />
             </button>
           </div>
